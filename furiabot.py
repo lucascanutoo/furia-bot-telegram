@@ -11,7 +11,7 @@ async def games(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text('Próximos jogos da FURIA: \n - 25/04 vs Team X \n - 30/04 vs Team Y')
 
 async def main():
-    token = '8080182375:AAErv_kjnYykIHnc4Eoi7Ymi_M_urIfPyYg'
+    token = os.environ["BOT_TOKEN"]
     
     application = Application.builder().token(token).build()
     
