@@ -1,1 +1,1 @@
-worker: python furiabot.py
+worker: python bot.py
