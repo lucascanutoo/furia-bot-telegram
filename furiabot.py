@@ -10,7 +10,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def games(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text('Próximos jogos da FURIA: \n - 25/04 vs Team X \n - 30/04 vs Team Y')
 
-async def main():
+def main():
     token = os.environ["BOT_TOKEN"]
     
     application = Application.builder().token(token).build()
@@ -18,8 +18,7 @@ async def main():
     application.add_handler(CommandHandler('start', start))
     application.add_handler(CommandHandler('jogos', games))
     
-    await application.run_polling()
+    application.run_polling()
 
 if __name__ == '__main__':
-    import asyncio
-    asyncio.run(main())
+    main()
